@@ -28,14 +28,14 @@
     </fileset>
   </path>
 
-  <target name="clean" description="test1">
+  <target name="clean" description="Ant タスクで生成された全てのファイルを削除します">
     <delete dir="${work.dir}" />
     <delete>
       <fileset dir="." includes="TEST*" />
     </delete>
   </target>
 
-  <target name="compile" description="test2">
+  <target name="compile" description="ソースコードをコンパイルして class ファイルを生成します">
     <mkdir dir="${classes.dir}" />
 
     <javac srcdir="${src.dir}"
@@ -44,7 +44,7 @@
            classpathref="runtime.classpath" />
   </target>
 
-  <target name="compile-test" depends="compile" description="test3">
+  <target name="compile-test" depends="compile" description="テストコードをコンパイルして class ファイルを生成します">
     <mkdir dir="${classes.dir}" />
 
     <javac srcdir="${test.src.dir}"
@@ -53,7 +53,7 @@
            classpathref="test.classpath" />
   </target>
 
-  <target name="exec" depends="compile" description="test4">
+  <target name="exec" depends="compile" description="コンパイルしたアプリケーションを実行します">
     <java classname="${main.class}"
           classpath="${classes.dir}"
           classpathref="runtime.classpath">
@@ -62,7 +62,7 @@
     </java>
   </target>
 
-  <target name="test" depends="compile-test" description="test5">
+  <target name="test" depends="compile-test" description="JUnit のテストを実行します">
     <mkdir dir="${test.report.dir}" />
 
     <junit>
@@ -74,13 +74,13 @@
     </junit>
   </target>
 
-  <target name="jar" depends="test" description="test6">
+  <target name="jar" depends="test" description="ソースコードをコンパイルして jar ファイルに固めます">
     <jar destfile="${work.dir}/${jar.name}"
          basedir="${classes.dir}"
          excludes="**/*Test.class" />
   </target>
 
-  <target name="build" depends="jar" description="test7">
+  <target name="build" depends="jar" description="プロジェクトをビルドして配布可能な zip ファイルを生成します">
     <mkdir dir="${assemble.dir}/lib" />
     <mkdir dir="${assemble.dir}/bin" />
 
