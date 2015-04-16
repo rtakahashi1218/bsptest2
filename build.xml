@@ -1,10 +1,5 @@
-<project name="jenkins project" default="build">
-
-    <target name="phpunit">
-        <exec dir="." executable="phpunit" failonerror="true">
-            <arg line="--colors tests" />
-        </exec>
-    </target>
-
-    <target name="build" depends="phpunit"/>
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="demo" basedir="/var/lib/jenkins/workspace/demo" default="CalcTest">
+  <target name="CalcTest">
+  </target>
 </project>
