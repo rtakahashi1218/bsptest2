@@ -5,4 +5,8 @@ class Calc
     {
         return $a + $b;
     }
+    public function subtraction($c, $d)
+    {
+        return $c + $d;
+    }
 }
