@@ -7,6 +7,11 @@ class CalcTest extends PHPUnit_Framework_TestCase
     public function testAdd()
     {   
         $calc = new Calc;
-        $this->assertEquals(3, $calc->add(1, 1));
+        $this->assertEquals(2, $calc->add(1, 1));
+    }
+    public function testSubtraction()
+    {   
+        $calc = new Calc;
+        $this->assertEquals(2, $calc->subtraction(4, 2));
     }   
 }
