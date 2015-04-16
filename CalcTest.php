@@ -14,4 +14,4 @@ class CalcTest extends PHPUnit_Framework_TestCase
         $calc = new Calc;
         $this->assertEquals(2, $calc->subtraction(4, 2));
     }   
-}
+} 
